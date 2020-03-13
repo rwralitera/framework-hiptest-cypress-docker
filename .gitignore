@@ -1,1 +1,14 @@
-node_modules
+src/.Trash-0/
+src/cypress/videos/
+cypress/videos/*
+.Trash-0/
+node_modules/
+cypress/screenshots/
+.vscode
+.vscode/*
+.project
+.pydevproject
+.settings/
+./package-lock.json
+./package.json
+./multiple-results/*

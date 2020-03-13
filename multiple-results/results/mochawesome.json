@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-03-13T21:49:18.153Z",
+    "end": "2020-03-13T21:49:21.546Z",
+    "duration": 3393,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5ded8bb9-42c7-4de8-b94b-60271cbf0c5a",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f152bfb1-dd9a-461a-b767-0de5a3174d74",
+          "title": "Formation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Formation",
+              "fullTitle": "Formation Formation",
+              "timedOut": null,
+              "duration": 1288,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Navigate to Google page\n// Given I navigate to \"http://www.google.com/\"\nthis.actionwords.iNavigateToP1(\"http://www.google.com/\");",
+              "err": {},
+              "uuid": "e6978a36-c766-41ba-a107-186bbf82eebf",
+              "parentUUID": "f152bfb1-dd9a-461a-b767-0de5a3174d74",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e6978a36-c766-41ba-a107-186bbf82eebf"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1288,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "5.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "useInlineDiffs": false
+      },
+      "version": "4.0.0"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "token": "15ad72b6-1fe5-4140-91be-b72175ecf019",
+        "endpoint": "http://web.demo.reportportal.io/api/v1",
+        "launch": "wralitera_TEST_EXAMPLE",
+        "project": "wralitera_personal",
+        "attachScreenshots": true,
+        "showPassedHooks": false,
+        "reportDir": "multiple-results/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "4.0.1"
+    }
+  }
+}

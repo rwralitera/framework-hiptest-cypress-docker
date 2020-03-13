@@ -1,0 +1,14 @@
+{
+	"integrationFolder": "cypress/integration",
+	"video": true,
+	"defaultCommandTimeout": 30000,
+	"pageLoadTimeout": 60000,
+	"requestTimeout": 30000,
+	"chromeWebSecurity": false,
+	"responseTimeout": 30000,
+	"env": {
+		"something": "development"
+	},
+	"modifyObstructiveCode": false,
+	"screenshotsFolder": "mochawesome-report/assets"
+}

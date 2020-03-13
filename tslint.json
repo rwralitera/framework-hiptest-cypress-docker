@@ -1,0 +1,105 @@
+{
+  "extends": [
+    "tslint:latest"
+  ],
+  "rules": {
+    "class-name": true,
+    "jsdoc-format": true,
+    "interface-name": [
+      true,
+      "always-prefix"
+    ],
+    "triple-equals": true,
+    "semicolon": [
+      true,
+      "always",
+      "ignore-bound-class-methods"
+    ],
+    "align": [
+      true,
+      "parameters",
+      "statements"
+    ],
+    "indent": [
+      true,
+      "spaces"
+    ],
+    "no-var-keyword": true,
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "private-static-field",
+          "protected-static-field",
+          "public-static-field",
+          "private-instance-field",
+          "protected-instance-field",
+          "public-instance-field",
+          "private-constructor",
+          "protected-constructor",
+          "public-constructor",
+          "private-static-method",
+          "protected-static-method",
+          "public-static-method",
+          "private-instance-method",
+          "protected-instance-method",
+          "public-instance-method"
+        ]
+      }
+    ],
+    "no-console": [
+      false
+    ],
+    "object-literal-sort-keys": false,
+    "quotemark": [
+      true,
+      "single",
+      "jsx-double"
+    ],
+    "prefer-const": true,
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
+    ],
+    "arrow-parens": false,
+    "interface-over-type-literal": false,
+    "no-consecutive-blank-lines": true,
+    "max-line-length": [true, 120],
+    "no-debugger": false,
+    "no-reference": false,
+    "curly": true,
+    "no-namespace": false,
+    "no-string-literal": false,
+    "variable-name": [true, "allow-pascal-case", "allow-leading-underscore", "ban-keywords"],
+    "no-empty": {
+      "options": true,
+      "severity": "warning"
+    },
+    "one-variable-per-declaration": false,
+    "no-var-requires": false,
+    "max-classes-per-file": [true, 1],
+    "prefer-conditional-expression": false,
+    "no-unused-variable": true,
+    "forin": {
+      "options": true,
+      "severity": "warning"
+    },
+    "no-for-in-array": true,
+    "no-switch-case-fall-through": {
+      "options": true,
+      "severity": "warning"
+    },
+    "cyclomatic-complexity": [true, 10],
+    "max-file-line-count": [true, 500],
+    "no-unnecessary-callback-wrapper": true,
+    "type-literal-delimiter": true,
+    "object-literal-key-quotes": [true, "as-needed"],
+    "no-return-await": {
+      "options": true,
+      "severity": "warning"
+    }
+  }
+}

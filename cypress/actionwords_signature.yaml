@@ -1,0 +1,6 @@
+---
+- name: I navigate to "p1"
+  uid: 11d363c1-5a14-4c48-8265-a38bd561f72b
+  parameters:
+  - name: p1
+  body_hash: d41d8cd98f00b204e9800998ecf8427e

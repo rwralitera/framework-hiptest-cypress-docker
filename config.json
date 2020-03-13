@@ -1,0 +1,19 @@
+{
+    "reporterEnabled": "mocha-junit-reporter, mochawesome, json, spec",
+    "mochaJunitReporterReporterOptions": {
+      "mochaFile": "multiple-results/test-[hash].xml",
+      "toConsole": true
+    },
+    "reporterOptions": {
+      "token": "15ad72b6-1fe5-4140-91be-b72175ecf019",
+      "endpoint": "http://web.demo.reportportal.io/api/v1",
+      "launch": "wralitera_TEST_EXAMPLE",
+      "project": "wralitera_personal",
+      "attachScreenshots": true,
+      "showPassedHooks": false,
+      "reportDir": "multiple-results/results",
+      "overwrite": false,
+      "html": false,
+      "json": true
+      }
+  }

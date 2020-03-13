@@ -1,22 +1,48 @@
 {
-  "name": "formation1",
-  "version": "1.0.0",
-  "description": "Formation 1: installation \"visit\"",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "name": "e2e",
+  "version": "0.10.0",
+  "description": "End-to-end test for the BackOffice",
+  "license": "SEE LICENSE IN LICENSE",
+  "author": "Wynd <contact@wynd.eu>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bentrole/formation1.git"
+    "url": "git@gitlab.wynd.eu:wynd-qa/finn-bo-automation.git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bentrole/formation1/issues"
+  "scripts": {
+    "cypress:run": "cypress run --reporter mocha-junit-reporter --env",
+    "cypress:run:headed": "cypress run  --headed --reporter mocha-junit-reporter --env",
+    "cypress:open": "cypress open"
   },
-  "homepage": "https://github.com/bentrole/formation1#readme",
+  "devDependencies": {
+    "@cypress/webpack-preprocessor": "^1.1.3",
+    "cypress": "^3.5.0",
+    "mocha": "^5.2.0",
+    "mocha-reportportal-agent": "^0.2.3",
+    "mochawesome": "^4.0.0",
+    "moment": "^2.22.2",
+    "pre-push": "^0.1.1",
+    "prettier": "^1.9.2",
+    "reflect-metadata": "^0.1.12",
+    "ts-loader": "^3.2.0",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.2"
+  },
+  "optionalDependencies": {},
   "dependencies": {
-    "cypress": "^3.8.3"
-  }
+    "@types/node": "^13.1.2",
+    "cypress-multi-reporters": "^1.2.1",
+    "dotenv": "^6.1.0",
+    "faker": "^4.1.0",
+    "mocha-junit-reporter": "^1.18.0",
+    "mocha-multi-reporters": "^1.1.7",
+    "mocha-reportportal": "file:./mocha-reportportal",
+    "mochawesome-merge": "github:Antontelesh/mochawesome-merge#feat/mochawesome-4",
+    "mochawesome-report-generator": "^4.0.1",
+    "reflect-metadata": "^0.1.12",
+    "reportportal-client": "^5.1.0",
+    "uuid": "^3.3.2"
+  },
+  "bundledDependencies": [
+    "deasync"
+  ]
 }

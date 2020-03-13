@@ -1,0 +1,24 @@
+{
+  "name": "mocha-reportportal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "reportportal.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.12.18"
+  },
+  "peerDependencies": {
+    "mocha": "^5.2.0"
+  },
+  "types": "./index.d.ts",
+  "dependencies": {
+    "mocha": "^5.2.0",
+    "reportportal-client": "^5.1.0"
+  }
+}
