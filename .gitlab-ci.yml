@@ -24,7 +24,6 @@ TEST:
     - npx mochawesome-merge --reportDir multiple-results/results > mochawesome.json || true
     - npx mochawesome-report-generator mochawesome.json || true
     - hiptest-publisher --verbose -c hiptest-publisher.conf --push="./multiple-results/*.xml" --test-run-name $TEST_RUN_NAME --push-format=junit || true
-    - ./slack || true
   artifacts:
     reports:
       junit: ./multiple-results/*.xml
