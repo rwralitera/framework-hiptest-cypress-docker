@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="1.288" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2020-03-13T21:49:18" tests="0" failures="0" time="0">
-  </testsuite>
-  <testsuite name="Formation" timestamp="2020-03-13T21:49:18" tests="1" failures="0" time="1.288">
-    <testcase name="Formation Formation" time="1.288" classname="Formation">
-    </testcase>
-  </testsuite>
-</testsuites>
