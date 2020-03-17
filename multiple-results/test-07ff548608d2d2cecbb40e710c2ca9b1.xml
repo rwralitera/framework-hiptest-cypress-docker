@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="1.646" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2020-03-13T22:10:53" tests="0" failures="0" time="0">
-  </testsuite>
-  <testsuite name="Formation" timestamp="2020-03-13T22:10:53" tests="1" failures="0" time="1.646">
-    <testcase name="Formation Formation (uid:ba4f120b-a9b9-49b3-ba98-f2fd9bc50ab6)" time="1.646" classname="Formation (uid:ba4f120b-a9b9-49b3-ba98-f2fd9bc50ab6)">
-    </testcase>
-  </testsuite>
-</testsuites>

@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2020-03-13T22:10:53.308Z",
-    "end": "2020-03-13T22:10:58.684Z",
-    "duration": 5376,
+    "start": "2020-03-17T08:28:27.771Z",
+    "end": "2020-03-17T08:28:30.851Z",
+    "duration": 3080,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "c341be68-46dd-4b95-808b-aa20a9d58b77",
+      "uuid": "a538b49d-fa0b-4c81-959d-bca6908d90d3",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "994225b3-831b-4536-a2a6-d08ac6034c86",
+          "uuid": "8baa2d4f-e5ee-44b1-ad9e-43a6fcc2c015",
           "title": "Formation",
           "fullFile": "",
           "file": "",
@@ -35,10 +35,10 @@
           "afterHooks": [],
           "tests": [
             {
-              "title": "Formation (uid:ba4f120b-a9b9-49b3-ba98-f2fd9bc50ab6)",
-              "fullTitle": "Formation Formation (uid:ba4f120b-a9b9-49b3-ba98-f2fd9bc50ab6)",
+              "title": "Formation",
+              "fullTitle": "Formation Formation",
               "timedOut": null,
-              "duration": 1646,
+              "duration": 1093,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "// Navigate to Google page\n// Given I navigate to \"http://www.google.com/\"\nthis.actionwords.iNavigateToP1(\"http://www.google.com/\");",
               "err": {},
-              "uuid": "7e04e578-e0dd-45f0-9fd9-f3c3a4fafdeb",
-              "parentUUID": "994225b3-831b-4536-a2a6-d08ac6034c86",
+              "uuid": "61ff321e-fd1c-4f99-9ee7-d4ad13639828",
+              "parentUUID": "8baa2d4f-e5ee-44b1-ad9e-43a6fcc2c015",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "7e04e578-e0dd-45f0-9fd9-f3c3a4fafdeb"
+            "61ff321e-fd1c-4f99-9ee7-d4ad13639828"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1646,
+          "duration": 1093,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
