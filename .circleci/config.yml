@@ -23,7 +23,8 @@ jobs:
       - run: export CYPRESS_BASE_URL=$BASE_URL
       - run: export ELECTRON_ENABLE_LOGGING=true
       - run: echo $CYPRESS_BASE_URL
-      - run: npx cypress run --reporter mocha-multi-reporters --reporter-options configFile=config.json --spec 'cypress/integration/tests/**/**' --env configFile=localhost
+      - run: make run_testname_headless BASE_URL=http://www.google.fr/ TEST_RUN_NAME=TEST
+      #- run: npx cypress run --reporter mocha-multi-reporters --reporter-options configFile=config.json --spec 'cypress/integration/tests/**/**' --env configFile=localhost
       - run: npx mochawesome-merge --reportDir multiple-results/results > mochawesome.json || true
       - run: npx mochawesome-report-generator mochawesome.json || true
       - run: hiptest-publisher --verbose -c hiptest-publisher.conf --push="./multiple-results/*.xml" --test-run-name $TEST_RUN_NAME --push-format=junit || true
