@@ -31,10 +31,11 @@ jobs:
       - store_test_results:
           path: multiple-results/
       - store_artifacts:
-          path: cypress/screenshots
-          path: cypress/videos
-          path: cypress/integration
-          path: mochawesome-report
+          path: 
+            - cypress/screenshots
+            - cypress/videos
+            - cypress/integration
+            - mochawesome-report
 workflows:
   version: 2
   build_and_test:
