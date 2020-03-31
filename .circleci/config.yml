@@ -11,23 +11,28 @@ jobs:
       - image: bentrole/personal:ruby-hiptest-chrome-cypress-pack
     steps:
       - checkout
-      - run:
-          name: "Print an env var stored in a Context"
-          command: echo ${BASE_URL}
-      - run: ls -la
       - run: rm -rf cypress/integration/tests/**/**
       - run: rm -rf multiple-results/*
-      - run: hiptest-publisher --verbose -c hiptest-publisher.conf --without=actionwords --test-run-name $TEST_RUN_NAME
+      - run:
+          name: "Get scenarios to test on CucumberStudio"
+          command: hiptest-publisher --verbose -c hiptest-publisher.conf --without=actionwords --test-run-name $TEST_RUN_NAME
       - run: npm cache clear --force
       - run: npm install
       - run: export CYPRESS_BASE_URL=$BASE_URL
       - run: export ELECTRON_ENABLE_LOGGING=true
-      - run: echo $CYPRESS_BASE_URL
-      - run: make run_testname_headless BASE_URL=$BASE_URL TEST_RUN_NAME=$TEST_RUN_NAME
+      - run:
+          name: "Run Cypress Tests"
+          command: make run_testname_headless BASE_URL=$BASE_URL TEST_RUN_NAME=$TEST_RUN_NAME
       #- run: npx cypress run --reporter mocha-multi-reporters --reporter-options configFile=config.json --spec 'cypress/integration/tests/**/**' --env configFile=localhost
-      - run: npx mochawesome-merge --reportDir multiple-results/results > mochawesome.json || true
-      - run: npx mochawesome-report-generator mochawesome.json || true
-      - run: hiptest-publisher --verbose -c hiptest-publisher.conf --push="./multiple-results/*.xml" --test-run-name $TEST_RUN_NAME --push-format=junit || true
+      - run: 
+          name: "Merge junit xml to json file"
+          command: npx mochawesome-merge --reportDir multiple-results/results > mochawesome.json || true
+      - run:
+          name: "Generate a single HTML Report"
+          command: npx mochawesome-report-generator mochawesome.json || true
+      - run:
+          name: "Send Report To CucumberStudio"
+          command: hiptest-publisher --verbose -c hiptest-publisher.conf --push="./multiple-results/*.xml" --test-run-name $TEST_RUN_NAME --push-format=junit || true
       - store_test_results:
           path: multiple-results/
       - store_artifacts:
@@ -38,6 +43,8 @@ jobs:
           path: cypress/videos
       - store_artifacts:
           path: cypress/screenshots
+      - store_artifacts:
+          path: cypress/integration
 workflows:
   version: 2
   build_and_test:
