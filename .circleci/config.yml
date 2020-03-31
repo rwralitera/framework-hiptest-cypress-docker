@@ -6,7 +6,7 @@ orbs:
   welcome: circleci/welcome-orb@0.4.1
 # Orchestrate or schedule a set of jobs
 jobs:
-  test:
+  CypressTest:
     docker:
       - image: bentrole/personal:ruby-hiptest-chrome-cypress-pack
     steps:
@@ -47,7 +47,7 @@ jobs:
           path: cypress/integration
 workflows:
   version: 2
-  build_and_test:
+  Test:
     jobs:
-      - test:
+      - CypressTest:
           context: Environment
