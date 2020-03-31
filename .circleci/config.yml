@@ -11,6 +11,10 @@ jobs:
       - image: bentrole/personal:ruby-hiptest-chrome-cypress-pack
     steps:
       - checkout
+      - run:
+          name: "Print an env var stored in a Context"
+          command: echo ${BASE_URL}
+          command: echo ${TEST_RUN_NAME}
       - run: ls -la
       - run: npm install
       - run: rm -rf cypress/integration/tests/**/**
