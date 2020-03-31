@@ -5,9 +5,38 @@ orbs:
   # Declare a dependency on the welcome-orb
   welcome: circleci/welcome-orb@0.4.1
 # Orchestrate or schedule a set of jobs
+jobs:
+  test:
+    docker:
+      - image: bentrole/personal:ruby-hiptest-chrome-cypress-pack
+    steps:
+      - checkout
+      - run: ls -la
+      - run: npm install
+      - run: rm -rf cypress/integration/tests/**/**
+      - run: rm -rf multiple-results/*
+      - run: hiptest-publisher --verbose -c hiptest-publisher.conf --without=actionwords --test-run-name $TEST_RUN_NAME
+      - run: rm -rf node_modules
+      - run: rm package-lock.json
+      - run: npm cache clear --force
+      - run: npm install
+      - run: echo $BASE_URL
+      - run: export CYPRESS_BASE_URL=$BASE_URL
+      - run: export ELECTRON_ENABLE_LOGGING=true
+      - run: npx cypress run --reporter mocha-multi-reporters --reporter-options configFile=config.json --spec 'cypress/integration/tests/**/**' --env configFile=localhost
+      - run: npx mochawesome-merge --reportDir multiple-results/results > mochawesome.json || true
+      - run: npx mochawesome-report-generator mochawesome.json || true
+      - run: hiptest-publisher --verbose -c hiptest-publisher.conf --push="./multiple-results/*.xml" --test-run-name $TEST_RUN_NAME --push-format=junit || true
+  
+      - store_test_results:
+          path: multiple-results/
+      - store_artifacts:
+          path: cypress/screenshots
+          path: cypress/videos
+          path: cypress/integration
+          path: mochawesome-report
 workflows:
-  # Name the workflow "welcome"
-  welcome:
-    # Run the welcome/run job in its own container
+  version: 2
+  build_and_test:
     jobs:
-      - welcome/run
+      - test

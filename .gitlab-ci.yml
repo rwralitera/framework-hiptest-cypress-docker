@@ -1,5 +1,5 @@
 # first, install Cypress, then run all tests (in parallel)
-image: registry.gitlab.com/william.ralitera/formation:latest
+image: bentrole/personal:ruby-hiptest-chrome-cypress-pack
 
 stages:
   - TEST
