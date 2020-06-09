@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@cypress/webpack-preprocessor": "^1.1.3",
-    "cypress": "^3.5.0",
+    "cypress": "^3.8.3",
     "mocha": "^5.2.0",
     "mocha-reportportal-agent": "^0.2.3",
     "mochawesome": "^4.0.0",

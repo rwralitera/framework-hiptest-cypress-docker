@@ -1,6 +1,23 @@
 ---
-- name: I navigate to "p1"
-  uid: 11d363c1-5a14-4c48-8265-a38bd561f72b
+- name: The user is on "p1" section of "p2" page for "p3" company
+  uid: 19a1e126-3639-4a5d-9743-e4ce1f4ada79
+  parameters:
+  - name: p1
+  - name: p2
+  - name: p3
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
+- name: The user is logged in as "p1"
+  uid: fa620df3-9cc0-40e9-801b-059fb7a8390a
+  parameters:
+  - name: p1
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
+- name: The user clicks on "p1" link
+  uid: 82b9a6d8-7bfa-49cf-90e6-51416ae14744
+  parameters:
+  - name: p1
+  body_hash: d41d8cd98f00b204e9800998ecf8427e
+- name: The user shouls see a flag with color "p1"
+  uid: 30f5833a-a08c-4128-b6ee-0ecbcbb7712b
   parameters:
   - name: p1
   body_hash: d41d8cd98f00b204e9800998ecf8427e
