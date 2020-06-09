@@ -19,8 +19,8 @@ jobs:
       - run: npm cache clear --force
       - run: npm install
       - run: export CYPRESS_BASE_URL=$BASE_URL
-      - run: echo $BASE_URL
-      - run: echo $TEST_RUN_NAME
+      - run: echo ${BASE_URL}
+      - run: echo ${TEST_RUN_NAME}
       - run: export ELECTRON_ENABLE_LOGGING=true
       - run:
           name: "Run Cypress Tests"
