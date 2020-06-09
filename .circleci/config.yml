@@ -24,8 +24,11 @@ jobs:
       - run: export ELECTRON_ENABLE_LOGGING=true
       - run:
           name: "Run Cypress Tests"
-          command: make run_testname_headless BASE_URL=$BASE_URL TEST_RUN_NAME=$TEST_RUN_NAME
+          command: npx cypress run --reporter mocha-multi-reporters --reporter-options configFile=config.json --spec 'cypress/integration/tests/**/**' --env configFile=localhost
       #- run: npx cypress run --reporter mocha-multi-reporters --reporter-options configFile=config.json --spec 'cypress/integration/tests/**/**' --env configFile=localhost
+      - run: hiptest-publisher --verbose -c hiptest-publisher.conf --push="./multiple-results/*.xml" --test-run-name $TEST_RUN_NAME --push-format=junit || true
+      - run: npx mochawesome-merge --reportDir multiple-results/results > mochawesome.json || true
+      - run: npx mochawesome-report-generator mochawesome.json || true
       - run: 
           name: "Merge junit xml to json file"
           command: npx mochawesome-merge --reportDir multiple-results/results > mochawesome.json
