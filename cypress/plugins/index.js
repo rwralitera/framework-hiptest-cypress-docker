@@ -38,3 +38,6 @@ module.exports = (on, config) => {
 
   return getConfigurationByFile(file)
 };
+
+
+require('@applitools/eyes-cypress')(module);

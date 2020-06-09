@@ -6,6 +6,7 @@ exports.Actionwords = {
     cy.get('.name').contains(p3).first().click()
     cy.wait(2000) //Modification de la page après rafraichissement en 2 temps
     cy.get('.ember-view').contains(p1).click()
+    cy.eyesCheckWindow('theUserIsOnP1SectionOfP2PageForP3Company');
   },
   theUserIsLoggedInAsP1: function (p1) {
     cy.visit('/login')
@@ -13,14 +14,18 @@ exports.Actionwords = {
     cy.get('#ember575').type('Rrw141189*')
     cy.get('#ember612').click()
     cy.get('#ember1044 > h1').should('exist')
+    cy.eyesCheckWindow('theUserIsLoggedInAsP1');
 
   },
   theUserClicksOnP1Link: function (p1) {
     cy.get('.infos').contains(p1).click()
+    cy.eyesCheckWindow('theUserClicksOnP1Link');
+
 
   },
   theUserShoulsSeeAFlagWithColorP1: function (p1) {
     cy.get('.scan-flag').should('have.class',p1)
+    cy.eyesCheckWindow('theUserShoulsSeeAFlagWithColorP1');
 
   }
 };
