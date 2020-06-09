@@ -4,7 +4,7 @@ exports.Actionwords = {
   theUserIsOnP1SectionOfP2PageForP3Company: function (p1, p2, p3) {
     cy.get('#ember926').click()
     cy.get('.name').contains(p3).first().click()
-    cy.wait(2000) //Modification de la page après rafraichissement en 2 temps
+    cy.wait(5000) //Modification de la page après rafraichissement en 2 temps
     cy.get('.ember-view').contains(p1).click()
   },
   theUserIsLoggedInAsP1: function (p1) {
