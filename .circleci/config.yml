@@ -19,22 +19,25 @@ jobs:
       - run: npm cache clear --force
       - run: npm install
       - run: export CYPRESS_BASE_URL=$BASE_URL
-      - run: echo $BASE_URL
-      - run: echo $TEST_RUN_NAME
+      - run: echo ${BASE_URL}
+      - run: echo ${TEST_RUN_NAME}
       - run: export ELECTRON_ENABLE_LOGGING=true
       - run:
           name: "Run Cypress Tests"
-          command: make run_testname_headless BASE_URL=$BASE_URL TEST_RUN_NAME=$TEST_RUN_NAME
+          command: CYPRESS_BASE_URL=$BASE_URL npx cypress run --reporter mocha-multi-reporters --reporter-options configFile=config.json --spec 'cypress/integration/tests/**/**' --env configFile=localhost
       #- run: npx cypress run --reporter mocha-multi-reporters --reporter-options configFile=config.json --spec 'cypress/integration/tests/**/**' --env configFile=localhost
+      - run: hiptest-publisher --verbose -c hiptest-publisher.conf --push="./multiple-results/*.xml" --test-run-name $TEST_RUN_NAME --push-format=junit || true
+      - run: npx mochawesome-merge --reportDir multiple-results/results > mochawesome.json || true
+      - run: npx mochawesome-report-generator mochawesome.json || true
       - run: 
           name: "Merge junit xml to json file"
-          command: npx mochawesome-merge --reportDir multiple-results/results > mochawesome.json || true
+          command: npx mochawesome-merge --reportDir multiple-results/results > mochawesome.json
       - run:
           name: "Generate a single HTML Report"
-          command: npx mochawesome-report-generator mochawesome.json || true
+          command: npx mochawesome-report-generator mochawesome.json
       - run:
           name: "Send Report To CucumberStudio"
-          command: hiptest-publisher --verbose -c hiptest-publisher.conf --push="./multiple-results/*.xml" --test-run-name $TEST_RUN_NAME --push-format=junit || true
+          command: hiptest-publisher --verbose -c hiptest-publisher.conf --push="./multiple-results/*.xml" --test-run-name $TEST_RUN_NAME --push-format=junit
       - store_test_results:
           path: multiple-results/
       - store_artifacts:
