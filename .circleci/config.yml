@@ -24,7 +24,7 @@ jobs:
       - run: export ELECTRON_ENABLE_LOGGING=true
       - run:
           name: "Run Cypress Tests"
-          command: CYPRESS_BASE_URL=$BASE_URL npx cypress run --reporter mocha-multi-reporters --reporter-options configFile=config.json --spec 'cypress/integration/tests/**/**' --env configFile=localhost
+          command: CYPRESS_BASE_URL=$BASE_URL npx cypress run --reporter mocha-multi-reporters --reporter-options configFile=config.json --spec 'cypress/integration/tests/**/**' --env configFile=localhost || true
       #- run: npx cypress run --reporter mocha-multi-reporters --reporter-options configFile=config.json --spec 'cypress/integration/tests/**/**' --env configFile=localhost
       - run: hiptest-publisher --verbose -c hiptest-publisher.conf --push="./multiple-results/*.xml" --test-run-name $TEST_RUN_NAME --push-format=junit || true
       - run: npx mochawesome-merge --reportDir multiple-results/results > mochawesome.json || true
