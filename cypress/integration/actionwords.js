@@ -21,6 +21,7 @@ exports.Actionwords = {
   theUserShoulsSeeAFlagWithColorP1: function (p1) {
     cy.get('.scan-flag').should('have.class',p1)
     //cy.eyesCheckWindow('theUserShoulsSeeAFlagWithColor'+p1);
+    
 
   }
 };
