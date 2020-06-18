@@ -11,10 +11,9 @@ TEST:
     - rm -rf multiple-results/*
     - hiptest-publisher --verbose -c hiptest-publisher.conf --without=actionwords --test-run-name $TEST_RUN_NAME
   script:
-    - node --version
     - npm install -g n
     - n stable
-    - node --version
+    - npm install npm@latest -g
     - rm -rf node_modules
     - rm package-lock.json
     - npm cache clear --force
