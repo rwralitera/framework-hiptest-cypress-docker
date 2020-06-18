@@ -16,15 +16,6 @@ function getConfigurationByFile(file) {
 
 // plugins file
 module.exports = (on, config) => {
-  on("before:browser:launch", (browser = {}, args) => {
-    // Disable shared memory when run headless since most CI environment do not support that
-    if (browser.name === "chrome") {
-      args.push("--disable-dev-shm-usage");
-    } else if (browser.name === "electron") {
-      args["disable-dev-shm-usage"] = true;
-    }
-    return args
-  });
   const options = {
     webpackOptions: require('./webpack.config'),
   };
