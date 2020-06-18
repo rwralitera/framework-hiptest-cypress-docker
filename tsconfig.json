@@ -5,6 +5,7 @@
     "noImplicitAny": false,
     "allowSyntheticDefaultImports": true
   },
+  "types": ["cypress", "@percy/cypress"],
   "include": [
     "cypress/**/*.ts",
     "node_modules/cypress/types/*.d.ts"

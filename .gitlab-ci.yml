@@ -17,9 +17,10 @@ TEST:
     - npm install
     - echo $BASE_URL
     - export CYPRESS_BASE_URL=$BASE_URL
+    - export PERCY_TOKEN=289ae72ed6a0542d138b03cb8c8c000a59c9f5b5709eb042caa9fee81ee44d35
     #Print console.log to Terminal
     - export ELECTRON_ENABLE_LOGGING=true
-    - npx cypress run --reporter mocha-multi-reporters --reporter-options configFile=config.json --spec 'cypress/integration/tests/**/**' --env configFile=localhost
+    - percy exec -- npx cypress run --reporter mocha-multi-reporters --reporter-options configFile=config.json --spec 'cypress/integration/tests/**/**' --env configFile=localhost
   after_script:
     - npx mochawesome-merge --reportDir multiple-results/results > mochawesome.json || true
     - npx mochawesome-report-generator mochawesome.json || true

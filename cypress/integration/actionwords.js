@@ -12,6 +12,8 @@ exports.Actionwords = {
     cy.get('#ember565').type('ralitera@october.eu')
     cy.get('#ember575').type('Rrw141189*')
     cy.eyesCheckWindow('theUserIsLoggedInAs'+p1);
+
+    cy.percySnapshot();
     cy.get('#ember612').click()
   },
   theUserClicksOnP1Link: function (p1) {
