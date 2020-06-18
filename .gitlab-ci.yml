@@ -11,12 +11,6 @@ TEST:
     - rm -rf multiple-results/*
     - hiptest-publisher --verbose -c hiptest-publisher.conf --without=actionwords --test-run-name $TEST_RUN_NAME
   script:
-    - npm install -g n
-    - npm install npm@latest -g
-    - n stable
-    - rm -rf node_modules
-    - rm package-lock.json
-    - npm cache clear --force
     - npm install
     - echo $BASE_URL
     - export CYPRESS_BASE_URL=$BASE_URL

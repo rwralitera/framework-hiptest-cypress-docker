@@ -22,7 +22,11 @@ RUN gem install hiptest-publisher
 RUN apt-get -y remove gcc
 RUN apt-get -y autoremove
 RUN apt-get -y clean
-RUN npm install cypress
+RUN npm install -g n
+RUN npm install npm@latest -g
+RUN n stable
+RUN npm install cypress@4.1.0
+RUN npm install
 RUN echo 'PACKAGES INSTALLED'
 RUN google-chrome --version
 RUN npm cypress --version
