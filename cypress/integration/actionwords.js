@@ -13,7 +13,7 @@ exports.Actionwords = {
     cy.get('#ember575').type('Rrw141189*')
     //cy.eyesCheckWindow('theUserIsLoggedInAs'+p1);
 
-    cy.percySnapshot(theUserIsLoggedInAsP1);
+    cy.percySnapshot('theUserIsLoggedInAsP1');
     cy.get('#ember612').click()
   },
   theUserClicksOnP1Link: function (p1) {
@@ -22,7 +22,7 @@ exports.Actionwords = {
   },
   theUserShoulsSeeAFlagWithColorP1: function (p1) {
     cy.get('.scan-flag').should('have.class',p1)
-    cy.percySnapshot(theUserShoulsSeeAFlagWithColorP1);
+    cy.percySnapshot('theUserShoulsSeeAFlagWithColorP1');
     //cy.eyesCheckWindow('theUserShoulsSeeAFlagWithColor'+p1);
     
 
