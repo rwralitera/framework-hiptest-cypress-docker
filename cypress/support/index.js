@@ -15,8 +15,6 @@
 
 // Import commands.js using ES2015 syntax:
 
-import '@applitools/eyes-cypress/commands'
-
 import './commands'
 const addContext = require('mochawesome/addContext')
 const api = require('../utils/api').default;
@@ -38,17 +36,12 @@ beforeEach(function () {
 		cy.clearCookies() // catch error
 		cy.getCookies().should('be.empty')
 	}
-	cy.eyesOpen({
-		appName: 'Demo October',
-		testName: 'TEST',
-	})
 })
 
 afterEach(function () {
 	if (this.currentTest.state === 'failed') {
 		//Cypress.runner.stop()
 		cy.task('log', "========================================TEST FAILED===============================================================================")
-		cy.eyesClose()
 	}
 });
 

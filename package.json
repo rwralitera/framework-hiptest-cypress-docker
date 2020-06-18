@@ -30,7 +30,6 @@
   },
   "optionalDependencies": {},
   "dependencies": {
-    "@applitools/eyes-cypress": "^3.12.0",
     "@types/node": "^13.1.2",
     "cypress-multi-reporters": "^1.2.1",
     "dotenv": "^6.1.0",
